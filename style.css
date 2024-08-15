@@ -26,3 +26,43 @@ body {
   -webkit-filter: drop-shadow(5px 5px 30px #222);
   filter: drop-shadow(5px 5px 30px #222);
 }
+/* Flaired edges */
+
+hr.style-eight {
+  height: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+hr.style-eight:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+.hr-color {
+  /* border: 5px solid #5b0d25;
+  background-color: #811538;
+
+  height: 8px;
+  width: 100%;
+  margin-top: 68px;
+  border-radius: 40px; */
+  background: rgb(2, 0, 36);
+
+  background: linear-gradient(
+    136deg,
+    rgb(179 44 44 / 29%) 0%,
+    rgb(197 11 11 / 49%) 35%,
+    rgb(255 0 0 / 23%) 100%
+  );
+  margin-top: 48px;
+  width: 100%;
+  border-radius: 30px;
+  height: 16px;
+}
