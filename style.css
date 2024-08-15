@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Almarai", sans-serif;
+}
+#header {
+  background-color: #811538;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  border-bottom: 20px solid #5b0d25;
+}
+#header-background {
+  background-image: url("pattern.png");
+}
+#logo-header {
+  position: absolute;
+  z-index: 999;
+  top: 60px;
+  left: 100px;
+}
+#logo-img {
+  width: 200px;
+  height: 250px;
+  -webkit-filter: drop-shadow(5px 5px 30px #222);
+  filter: drop-shadow(5px 5px 30px #222);
+}
