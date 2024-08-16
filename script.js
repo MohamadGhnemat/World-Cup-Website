@@ -90,25 +90,27 @@ function getMatches() {
     .then((response) => {
       const matches = response.data.matches;
       document.getElementById("matches").innerHTML = "";
+      let arr = ["GROUP_STAGE"];
       for (match of matches) {
         const homeTeam = match.homeTeam;
         const awayTeam = match.awayTeam;
         const utcDate = match.utcDate;
+
+        let hrDiv = "";
+        if (arr.includes(match.stage) == false) {
+          arr.push(match.stage);
+          hrDiv = `<div id="hrDiv" class="hr-color "></div>`;
+        }
+
         const matchTime = new Date(utcDate);
         const dateString = `${matchTime.getUTCFullYear()} / ${
           matchTime.getUTCMonth() + 1
         } / ${matchTime.getUTCDate()}   (${matchTime.getUTCHours()}:${matchTime.getUTCMinutes()})`;
         const content = `
-        ${
-          match.id == 391929 ||
-          match.id == 391937 ||
-          match.id == 391941 ||
-          match.id == 391943 ||
-          match.id == 391944
-            ? "<div class='hr-color'> </div>"
-            : ""
-        }
-   
+       
+        ${hrDiv}
+        
+       
         <div class="col-sm-12 ">
               <div class="card shadow rounded-pill mt-5" style="overflow: hidden">
                 <div class="card-body p-0">
@@ -169,9 +171,20 @@ function getMatches() {
         
         
         `;
+
         document.getElementById("matches").innerHTML += content;
       }
     });
 }
 getStandings();
 getMatches();
+let span = document.querySelector(".up");
+window.onscroll = function () {
+  this.scrollY >= 1000
+    ? span.classList.add("show")
+    : span.classList.remove("show");
+};
+span.onclick = function () {
+  window.scrollTo({ top: 0 });
+};
+// cmd go to this path     C:\Program Files\Google\Chrome\Application> chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
