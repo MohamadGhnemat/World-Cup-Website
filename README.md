@@ -1,7 +1,7 @@
 This project is to apply a front-end technologies(HTML , CSS , BOOTSTRAP , JS)
 
 In this project, I have used API from https://lnkd.in/dehPMHsS to fetch data.
-
+In order to run this project >> cmd go to this path     C:\Program Files\Google\Chrome\Application> chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 
 
 https://github.com/user-attachments/assets/870dd73d-d8e8-47db-abbd-2120f11cb290
